@@ -15,8 +15,8 @@ namespace ProyectoProgramacion1Grupo6
             "admin@banco.com", "01/01/1990", true),
           new Usuario("usuario", "password", "BASICA", "0801199087654", "12345678",
               "usuario@email.com", "15/06/1995",false)};
-        
-  
+
+
         public static List<Cuenta> cuentas = new List<Cuenta>();
         public static Usuario usuarioActual = null;
 
@@ -33,19 +33,17 @@ namespace ProyectoProgramacion1Grupo6
 
             int salir = 0;
 
-
-
             do
             {
-                Console.Write("Ingrese el nombre de usuario: ");
-                string nombre = Convert.ToString(Console.ReadLine());
-                Console.Write("Ingrese la contrasena: ");
+                Console.Write("Ingrese el email de usuario: ");
+                string correoElectronico = Convert.ToString(Console.ReadLine());
+                Console.Write("Ingrese la contraseña: ");
                 string contrasena = Convert.ToString(Console.ReadLine());
 
                 Usuario usuario = null;
                 for (int i = 0; i < usuarios.Count; i++)
                 {
-                    if (usuarios[i].Nombre == nombre && usuarios[i].Contrasena == contrasena)
+                    if (usuarios[i].CorreoElectronico == correoElectronico && usuarios[i].Contrasena == contrasena)
                     {
                         usuario = usuarios[i];
                         break;
@@ -72,7 +70,7 @@ namespace ProyectoProgramacion1Grupo6
                 }
                 else
                 {
-                    Console.WriteLine("Nombre de usuario o contrasena incorrectos.");
+                    Console.WriteLine("Email de usuario o contrasena incorrectos.");
                 }
 
 
@@ -97,7 +95,7 @@ namespace ProyectoProgramacion1Grupo6
         }
 
 
-            
+
         //FUNCION PARA AGREGAR UNA CUENTA
         static void AgregarCuenta()
         {
@@ -111,14 +109,15 @@ namespace ProyectoProgramacion1Grupo6
             if (tipoCuenta == "BASICA")
             {
                 nuevaCuenta = new CuentaBasica(idPropietario);
-            }else if (tipoCuenta == "PREMIUM")
+            }
+            else if (tipoCuenta == "PREMIUM")
             {
-                nuevaCuenta= new CuentaPremium(idPropietario);
+                nuevaCuenta = new CuentaPremium(idPropietario);
             }
             else
             {
-                Console.WriteLine("Tipo de Cuenta invalido. Seasignara una cuenta BASICA,");
-                nuevaCuenta=new CuentaBasica(idPropietario);
+                Console.WriteLine("Tipo de Cuenta invalido. Se asignara una cuenta BASICA,");
+                nuevaCuenta = new CuentaBasica(idPropietario);
             }
 
             cuentas.Add(nuevaCuenta);
@@ -195,7 +194,7 @@ namespace ProyectoProgramacion1Grupo6
 
                 Console.WriteLine("\nPresione cualquier tecla para continuar...");
                 Console.ReadKey();
-                Console.Clear();
+                
             }
         }
 
@@ -224,9 +223,9 @@ namespace ProyectoProgramacion1Grupo6
             Console.Write("Ingrese su fecha de nacimiento (dd/mm/yyyy): ");
             string fechaNacimiento = Convert.ToString(Console.ReadLine());
 
-           
 
-            Usuario nuevoUsuario = new Usuario(nombre, contrasena, tipoCuenta, 
+
+            Usuario nuevoUsuario = new Usuario(nombre, contrasena, tipoCuenta,
                 identidad, telefonoMovil, correoElectronico, fechaNacimiento, false);
             usuarios.Add(nuevoUsuario);
             Console.WriteLine("Usuario registrado correctamente.");
@@ -236,13 +235,13 @@ namespace ProyectoProgramacion1Grupo6
         //FUNCION PARA ELIMINAR USUARIO POR EL ADMINISTRADOR
         public static void EliminarUsuario()
         {
-            Console.Write("Ingrese el nombre de usuario a eliminar: ");
-            string nombre = Convert.ToString(Console.ReadLine());
+            Console.Write("Ingrese el Email de usuario a eliminar: ");
+            string correoEliminar = Convert.ToString(Console.ReadLine());
 
             int index = -1;
             for (int i = 0; i < usuarios.Count; i++)
             {
-                if (usuarios[i].Nombre == nombre)
+                if (usuarios[i].CorreoElectronico == correoEliminar)
                 {
                     index = i;
                     break;
@@ -262,7 +261,7 @@ namespace ProyectoProgramacion1Grupo6
         }
 
 
-        
+
 
 
         //FUNCION PARA MENU DE OPERACIONES BANCARIAS USUARIO CLIENTE
@@ -306,7 +305,7 @@ namespace ProyectoProgramacion1Grupo6
 
                 Console.WriteLine("\nPresione cualquier tecla para continuar...");
                 Console.ReadKey();
-                Console.Clear();
+
             }
         }
 
@@ -402,8 +401,6 @@ namespace ProyectoProgramacion1Grupo6
                 Console.WriteLine("Cuenta no encontrada o no es el propietario.");
             }
         }
-
-        
 
     }
 }
