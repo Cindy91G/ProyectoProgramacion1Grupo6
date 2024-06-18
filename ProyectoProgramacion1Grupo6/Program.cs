@@ -10,6 +10,8 @@ namespace ProyectoProgramacion1Grupo6
 
     public class Program
     {
+        //Usuario para inicio de sesion. usuario: admin@banco.com; contraseña: admin123
+
         public static List<Usuario> usuarios = new List<Usuario>
         { new Usuario("admin", "admin123", "PREMIUM", "0801199012345", "98765432",
             "admin@banco.com", "01/01/1990", true),
@@ -26,7 +28,7 @@ namespace ProyectoProgramacion1Grupo6
 
         }
 
-
+        //Funcion  para recorrer todo el programa.
         static void MenuInicial()
         {
             Console.WriteLine("======Bienvenido al Cajero Automatico del Banco T1172======");
@@ -122,7 +124,7 @@ namespace ProyectoProgramacion1Grupo6
 
             cuentas.Add(nuevaCuenta);
             Console.WriteLine("Cuenta agregada correctamente.");
-            MenuInicial();
+            
         }
 
         //FUNCION PARA ELIMAR CUENTA
@@ -303,7 +305,7 @@ namespace ProyectoProgramacion1Grupo6
                         break;
                 }
 
-                Console.WriteLine("\nPresione cualquier tecla para continuar...");
+                
                 Console.ReadKey();
 
             }

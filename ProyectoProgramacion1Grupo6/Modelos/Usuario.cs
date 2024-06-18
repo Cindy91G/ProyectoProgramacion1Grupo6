@@ -8,6 +8,7 @@ namespace ProyectoProgramacion1Grupo6.Modelos
 {
     public class Usuario
     {
+        //Propiedades automaticas
         public string Nombre { get; set; }
         public string Contrasena { get; set; }
         public string TipoCuenta { get; set; }
@@ -18,7 +19,7 @@ namespace ProyectoProgramacion1Grupo6.Modelos
 
         public bool EsAdmin { get; set; }
 
-
+        //Metodos
         public Usuario(string nombre, string contrasena, string tipoCuenta, string identidad, string telefonoMovil,
             string correoElectronico, string fechaNacimiento, bool esAdmin)
         {

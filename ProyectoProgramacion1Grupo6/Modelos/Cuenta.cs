@@ -6,11 +6,14 @@ using System.Threading.Tasks;
 
 namespace ProyectoProgramacion1Grupo6.Modelos
 {
+    //Clase padre/base 
     public class Cuenta
     {
+        //Propiedades automaticas
         public string IdPropietario { get;  set; }
         public double Saldo { get; set; }
 
+        //Metodos
         public Cuenta(string idPropietario,double saldoInicial)
         {           
             IdPropietario = idPropietario;
