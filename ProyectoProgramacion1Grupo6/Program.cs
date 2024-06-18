@@ -122,7 +122,7 @@ namespace ProyectoProgramacion1Grupo6
 
             cuentas.Add(nuevaCuenta);
             Console.WriteLine("Cuenta agregada correctamente.");
-            MenuInicial();
+            
         }
 
         //FUNCION PARA ELIMAR CUENTA
@@ -303,7 +303,7 @@ namespace ProyectoProgramacion1Grupo6
                         break;
                 }
 
-                Console.WriteLine("\nPresione cualquier tecla para continuar...");
+                
                 Console.ReadKey();
 
             }
